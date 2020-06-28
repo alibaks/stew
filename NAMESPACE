@@ -1,0 +1,8 @@
+import(sp)
+import("methods")
+importFrom("graphics", "abline", "axis", "box", "grid", "lines", "title")
+importFrom("stats", "na.omit")
+importFrom("rts", rts)
+importFrom("raster",calc,raster,nlayers,addLayer)
+importFrom("terra",app,rast)
+exportPattern("^[[:alpha:]]+")

@@ -1,0 +1,14 @@
+Package: stew
+Type: Package
+Title: spatio-temporal early warning signals of critical transitions
+Version: 0.1-0
+Author: Sara Alibakhshi
+Maintainer: Sara Alibakhshi <sara.alibakhshi@gmail.com>
+Depends: methods, sp (>= 1.2-0), R (>= 3.0.0)
+Imports: rts, elsa, raster, terra
+Suggests: rmarkdown
+Description: spatio-temporal analysis of ecosystem dynamics to explore abrupt
+      changes and early warning signals of critical transitions to alternative states.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
