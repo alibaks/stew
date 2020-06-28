@@ -1,6 +1,11 @@
 \name{stew}
 \alias{stew}
 \title{Spatio-temporal early warning signals of a critical transition}
+
+\description{
+This function generate early warning signals of critical transition using a novel local spatial autocorrelation approach.
+}
+
 \usage{
 stew(x,stat,d,output,...)
 }
@@ -11,11 +16,13 @@ stew(x,stat,d,output,...)
   \item{output}{a character vector specifying the outputs including 'tau', 'raster', or 'rts'}
 }
 
-\description{
+\details{
 stew employs LISA (Local Indicators of Spatial Association). Depending on whether a local Geary's c or local Moran's I is used, the stat can be 'stg', or 'stm', respectively.
 
 The output can be either the time series of LISAs, or the trend of the LISA values obtained from applying Kendal's tau, or both.
 }
+
+
 \examples{
 #-------
 
