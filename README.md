@@ -10,7 +10,7 @@ To achieve this goal, a novel approach is proposed, which utilizes local spatial
 ## Key Features of the "stew" R Package
 To facilitate spatio-temporal analysis of ecosystem state changes, I have developed the "stew" R package. This package empowers users to explore and analyze spatio-temporal data effectively. Key features of the "stew" package include:
 
-1.**Spatio-Temporal Data Exploration: The package provides functions to visualize and explore spatio-temporal datasets, enabling users to gain insights into ecosystem dynamics and disturbances over time.
+1. **Spatio-Temporal Data Exploration: The package provides functions to visualize and explore spatio-temporal datasets, enabling users to gain insights into ecosystem dynamics and disturbances over time.**
 
 2.**Local Spatial Autocorrelation Analysis: Users can leverage the "stew" package to calculate local Moran's I and local Geary's c measurements, quantifying the spatial autocorrelation of ecosystem variables at different time points.
 
