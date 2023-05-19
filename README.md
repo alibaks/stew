@@ -1,13 +1,13 @@
 # stew
 stew: Spatio-Temporal Analysis of Ecosystem State Changes
 
-##Overview
+## Overview
 Ecosystems worldwide are facing unprecedented pressures, with rapid changes in disturbance regimes that can have detrimental effects. However, characterizing the state of an ecosystem and predicting its response to disturbances has proven to be a notoriously challenging task. This study aims to address this issue by leveraging remotely sensed spatio-temporal data to identify early warning signals of forest mortality using satellite images.
 
-##Methodology
+## Methodology
 To achieve this goal, a novel approach is proposed, which utilizes local spatial autocorrelation measurements at each time point. Specifically, the approach employs the local Moran's I and local Geary's c methods to quantify spatial autocorrelation. These methods have been rigorously tested across multiple study sites and have consistently produced robust results. By analyzing time series of local spatial autocorrelation values, the approach successfully generates early warning signals, predicting forest mortality occurrence in unhealthy study sites up to two years in advance.
 
-##Key Features of the "stew" R Package
+## Key Features of the "stew" R Package
 To facilitate spatio-temporal analysis of ecosystem state changes, I have developed the "stew" R package. This package empowers users to explore and analyze spatio-temporal data effectively. Key features of the "stew" package include:
 
 Spatio-Temporal Data Exploration: The package provides functions to visualize and explore spatio-temporal datasets, enabling users to gain insights into ecosystem dynamics and disturbances over time.
@@ -18,7 +18,7 @@ Early Warning Signal Detection: The package includes advanced algorithms to dete
 
 Robust and Reproducible Results: The "stew" package utilizes state-of-the-art methodologies that have been extensively tested across various study sites. It ensures the generation of reliable and reproducible results for spatio-temporal analysis.
 
-##Conclusion
+## Conclusion
 This work underscores the potential of spatio-temporal indicators in diagnosing early warning signals and predicting upcoming climate-induced forest mortality events. By utilizing the "stew" R package, researchers and practitioners can delve into comprehensive spatio-temporal analyses of ecosystem state changes, aiding in the proactive management and conservation of vulnerable ecosystems.
 
 
