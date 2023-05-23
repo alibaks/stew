@@ -1,4 +1,5 @@
 
+# measure local indicators of spatial association (LISA) using the package elsa
 .getLisa <- function(x,d1,d2,stat) {
   elsa::lisa(x,d1,d2,statistic = stat)
 }
@@ -15,8 +16,7 @@ if (!isGeneric("stew")) {
 setMethod('stew', signature(x='RasterStackBrickTS'),
           function(x,stat,d,output,...) {
             ind <- index(x)
-
-            .terra <- require(terra)
+            .terra <- require('terra',character.only = TRUE,quietly = TRUE)
 
             k <- NULL
 

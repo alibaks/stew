@@ -12,3 +12,5 @@ setMethod('spews', signature(x='RasterStackBrickTS'),
 
           }
 )
+
+#usethis::use_git()

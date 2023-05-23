@@ -1,6 +1,6 @@
-\name{stew}
-\alias{stew}
-\alias{stew,RasterStackBrickTS-method}
+\name{sptime_ews}
+\alias{sptime_ews}
+\alias{sptime_ews,RasterStackBrickTS-method}
 
 
 \title{Spatio-temporal early warning signals of a critical transition}
