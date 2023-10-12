@@ -8,7 +8,7 @@
   This function calculates the autocorrelation function (ACF) for a numeric vector and calculate a trend using Kendal Tau.
 }
 \usage{
-  acfk(x, r = NULL)
+  acfk(x, r )
 }
 \arguments{
   \item{x}{A numeric vector.}

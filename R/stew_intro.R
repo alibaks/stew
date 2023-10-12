@@ -1,5 +1,5 @@
-#' @export
-stew_intro <- function() {
+
+.stew_intro <- function() {
   message("Welcome to the stew package!")
   message("================================")
   message("stew: Spatial Weighted Statistics")
@@ -12,6 +12,6 @@ stew_intro <- function() {
 
 # Call the welcome message function when the package is loaded
 .onAttach <- function(libname, pkgname) {
-  stew_intro()
+  .stew_intro()
   invisible()
 }

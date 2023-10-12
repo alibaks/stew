@@ -23,12 +23,12 @@
   The test statistic (\code{z}) is computed as the signed difference between \code{S} and 1, divided by the square root of \code{varS}. The sign of \code{z} indicates the direction of the correlation.
 
   The p-value is calculated as twice the minimum of 0.5 and the cumulative distribution function of the standard normal distribution evaluated at the absolute value of \code{z}. It represents the probability of obtaining a correlation as extreme as the observed correlation, assuming the null hypothesis of no correlation.
-
+}
 
 \value{
   A list containing the Kendall's rank correlation coefficient, p-value, test statistic, and estimates.
 }
 \examples{
 x <- c(1, 2, 3, 4, 5)
-getKendal(x) # returns: tau=1, p.value=0.002856, statistic=(z=2.833213), estimates=c(S=10, varS=9.5)
+getKendal(x) 
 }
