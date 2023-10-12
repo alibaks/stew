@@ -2,7 +2,7 @@
 #-------------------
 .fdif <- function(ex,k=3) {
   ex <- as.vector(ex)
-  ex1 <- .rollMean(ex,k=k)
+  ex1 <- rollMean(ex,k=k)
   ex <- na.omit(ex1)
 
   if (length(ex) > 20) {

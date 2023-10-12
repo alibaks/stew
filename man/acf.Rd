@@ -8,7 +8,7 @@
   This function calculates the autocorrelation function (ACF) for a numeric vector and calculate a trend using Kendal Tau.
 }
 \usage{
-  acf(x, r = NULL)
+  acfk(x, r = NULL)
 }
 \arguments{
   \item{x}{A numeric vector.}
@@ -22,12 +22,6 @@
   The function iteratively calculates the ACF for each rolling window of size \code{r}. For each window, the \code{acf} function from the \code{stats} package is called with the specified options: \code{plot=FALSE} to prevent plotting the ACF, \code{lag.max = 1} to calculate only the first lag, and \code{na.action = na.pass} to handle missing values by passing them through.
 
   The computed ACF values are stored in the vector \code{o}. Any missing values in \code{o} are removed using \code{!is.na(o)}. If there are more than one non-missing ACF values, the function also includes the Kendall's rank correlation coefficient (\code{tau}) calculated using the \code{.getKendal} function, as well as leading \code{NA} values in the ACF vector to align with the rolling window size.
-
-  The function returns a list with the following components:
-  \begin{description}
-    \item{\code{tau}}{The Kendall's rank correlation coefficient (\code{tau}) of the input vector \code{x}, indicating the strength and direction of the trend.}
-    \item{\code{acf}}{A numeric vector containing the ACF values, with leading \code{NA} values to align with the rolling window size.}
-  \end{description}
 }
 \value{
   A list containing the Kendall's rank correlation coefficient and the ACF values.

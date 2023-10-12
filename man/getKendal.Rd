@@ -24,14 +24,7 @@
 
   The p-value is calculated as twice the minimum of 0.5 and the cumulative distribution function of the standard normal distribution evaluated at the absolute value of \code{z}. It represents the probability of obtaining a correlation as extreme as the observed correlation, assuming the null hypothesis of no correlation.
 
-  The function returns a list with the following components:
-  \begin{description}
-    \item{\code{tau}}{The Kendall's rank correlation coefficient, indicating the strength and direction of the relationship.}
-    \item{\code{p.value}}{The p-value associated with the test statistic, indicating the statistical significance of the observed correlation.}
-    \item{\code{statistic}}{A named numeric vector containing the test statistic (\code{z}), which represents the standardized difference between the observed correlation and the expected correlation under the null hypothesis.}
-    \item{\code{estimates}}{A named numeric vector containing the estimates \code{S} and \code{varS}, which provide additional information about the calculation.}
-  \end{description}
-}
+
 \value{
   A list containing the Kendall's rank correlation coefficient, p-value, test statistic, and estimates.
 }

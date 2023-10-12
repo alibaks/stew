@@ -8,7 +8,7 @@
 This function generate early warning signals of critical transition using a novel local spatial autocorrelation approach.
 }
 \usage{
-  \method{stew}{x}(x, stat = "stg", d = NULL, output = c("raster", "rts", "tau"), ...)
+  \method{sptime_ews}{x}(x, stat = "stg", d = NULL, output = c("raster", "rts", "tau"), ...)
 }
 \arguments{
   \item{x}{\code{RasterStackBrickTS} object. The raster stack or brick to be analyzed.}

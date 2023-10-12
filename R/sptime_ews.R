@@ -1,4 +1,55 @@
 
+
+
+
+.f <- function(ex,...) {
+  ex <- ex[!is.na(ex)]
+  if (length(ex) > 30) {
+    ex1<-rollapply(ex, width=3, FUN=mean, na.rm = TRUE, fill = NA)
+    ex<-na.omit(ex1)
+    if (length(ex) > 10) {
+      #ex1<-na.omit(ex) 
+      kt<-trend::mk.test(ex)
+      ktt<-kt$estimates[3]
+      ktt
+    } else NA
+  } else NA
+} 
+
+#----
+
+.ac <- function(x,r=50) {
+  n <- length(x)
+  if (r > n) stop("rolling window should be less than the length of x")
+  s <- 1:r
+  o <- c()
+  while(s[r] <= n) {
+    a <- acf(x[s],plot=FALSE,lag.max = 1,na.action = na.pass)
+    o <- c(o, a$acf[2])
+    s <- s + 1
+  }
+  o <- o[!is.na(o)]
+  if (length(o) > 1) {
+    list(tau = trend::mk.test(o)$estimates[3],acf=c(rep(NA,r-1),o))
+  }
+  
+  
+}
+
+.gauss.detrend <- function(x,bw,timeindex) {
+  ksmooth(timeindex, x, kernel = "normal", bandwidth = bw, range.x = range(timeindex), 
+          x.points = timeindex)$y
+}
+
+
+.fdif.detrend <- function(x) {
+  (x[2:length(x)] + x[1:(length(x)-1)]) / 2
+}
+
+
+#---------
+
+
 .sptime_ews <- function(x, detrend=NULL,bw=5, interpolate=NULL,k=6,rw=50) {
   bw <- round(nlayers(x@raster) * bw / 100)
   rw <- round(nlayers(x@raster) * rw / 100)
