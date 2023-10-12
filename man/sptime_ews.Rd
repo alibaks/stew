@@ -1,26 +1,26 @@
 \name{sptime_ews}
 \alias{sptime_ews}
 \alias{sptime_ews,RasterStackBrickTS-method}
-
+\alias{sptime_ews,SpatRasterTS-method}
 
 \title{Spatio-temporal early warning signals of a critical transition}
 \description{
 This function generate early warning signals of critical transition using a novel local spatial autocorrelation approach.
 }
+
 \usage{
-  \method{sptime_ews}{x}(x, stat = "stg", d = NULL, output = c("raster", "rts", "tau"), ...)
+sptime_ews(x, detrend=NULL,bw=5, interpolate=NULL,k=6,rw=50)
 }
+
 \arguments{
-  \item{x}{\code{RasterStackBrickTS} object. The raster stack or brick to be analyzed.}
-
-  \item{stat}{\code{character}. The statistic to compute for LISA analysis. Options include 'stg', 'geary', 'localgeary', 'c', 'stm', 'moran', 'localmoran', 'm', or 'i'. Default is 'stg'.}
-
-  \item{d}{\code{numeric}. The distance parameter for LISA analysis. Default is NULL, which sets it to maximum resolution * sqrt(2).}
-
-  \item{output}{\code{character}. Desired output types. Options include 'raster', 'rts', and 'tau'. You can specify multiple types by providing a vector. Default is 'raster'.}
-
-  \item{...}{Additional arguments passed to internal functions.}
-}
+  \item{x}{Raster Time Series object (created using the rts package)}
+  \item{detrend}{whether detrending is applied, either NULL (for not detrending), or name of detrending method including: 'fdif','gaussian' }
+  \item{bw}{a single numeric value specifies band width}
+  \item{interpolate}{NULL (for no intepolation) or a single character specifying the interpolation method, either of "approx", or "ma" (moving average)}
+  \item{k}{parameter}
+  \item{rw}{rolling window size (default: 50)}
+  }
+  
 \details{
   The \code{stew} function calculates spatial statistics and performs LISA analysis on each layer of the input raster stack or brick object. It internally uses the \code{.getLisa} function to compute the LISA results.
 
@@ -37,21 +37,36 @@ This function generate early warning signals of critical transition using a nove
   The \code{stew} function returns the calculated spatial statistics and LISA analysis results based on the specified output types.
 }
 \examples{
+\dontrun{
 # Load the stew package
 library(stew)
 
-# Create a sample raster stack
-r1 <- raster(matrix(runif(100), 10, 10))
-r2 <- raster(matrix(runif(100), 10, 10))
-s <- stack(r1, r2)
-rts_obj <- rts(x = s, time = as.Date(c("2023-01-01", "2023-01-01")))
-
-# Calculate results using the stew function
+file <- system.file("external/ndvi.tif", package="stew") # path to ndvi dataset
 
 
-result_raster <- stew(rts_obj, stat = "stg", output= "raster")
-plot(result_raster)
+# Read raster object
+r <- rast(file)
+r
 
-result_rts <- stew(rts_obj, stat = "stg", output= "rts")
-plot(result_rts)
+# in order to make a raster time series object, you need the corresponsing date 
+# for raster layers:
+
+d <- seq(as.Date("2000-01-03"),as.Date("2019-01-01"),length.out = nlyr(r))
+
+head(d) # date object with the length of 229 corresponding to 229 layers in r 
+
+rt <- rts(r, d) # create raster time series object
+
+rt
+
+# Calculate spatio-temporal early warning signals:
+
+
+spe <- sptime_ews(rt, detrend=NULL,bw=5, interpolate=NULL,k=6,rw=50)
+
+#plot(spe[[1:4]])
+
+}
+
+
 }

@@ -7,10 +7,10 @@
   This function estimates the trend for a vector and returns the trend value if the vector has more than 20 non-missing values.
 }
 \usage{
-  fdif(ex, k = 3)
+  fdif(x, k )
 }
 \arguments{
-  \item{ex}{A vector.}
+  \item{x}{A vector.}
   \item{k}{An integer specifying the window size for computing the rolling mean. Default is 3.}
   
 }

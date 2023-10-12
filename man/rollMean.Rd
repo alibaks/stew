@@ -8,7 +8,7 @@
   This function calculates the rolling mean of a numeric vector.
 }
 \usage{
-  rollMean(x, k = 3)
+  rollMean(x, k)
 }
 \arguments{
   \item{x}{A numeric vector.}

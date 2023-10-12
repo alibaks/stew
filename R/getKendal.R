@@ -1,7 +1,7 @@
 
 #--------------
 #--------------
-.getKendal <- function(x) {
+.getKendal <- function(x,...) {
   # based on the mk.test function in the package trend
   if(!is.numeric(x)){
     stop("'x' must be a numeric vector")

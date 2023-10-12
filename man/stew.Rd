@@ -1,14 +1,14 @@
 \name{stew}
 \alias{stew}
 \alias{stew,RasterStackBrickTS-method}
-
+\alias{stew,SpatRasterTS-method}
 
 \title{Spatio-temporal early warning signals of a critical transition}
 \description{
 This function generate early warning signals of critical transition using a novel local spatial autocorrelation approach.
 }
 \usage{
-  \method{stew}{x}(x, stat = "stg", d = NULL, output = c("raster", "rts", "tau"), ...)
+  stew(x, stat, d, output, pv_sig, ...)
 }
 \arguments{
   \item{x}{\code{RasterStackBrickTS} object. The raster stack or brick to be analyzed.}
@@ -18,6 +18,9 @@ This function generate early warning signals of critical transition using a nove
   \item{d}{\code{numeric}. The distance parameter for LISA analysis. Default is NULL, which sets it to maximum resolution * sqrt(2).}
 
   \item{output}{\code{character}. Desired output types. Options include 'raster', 'rts', and 'tau'. You can specify multiple types by providing a vector. Default is 'raster'.}
+  
+  \item{pv_sig}{\code{numeric or NULL}. specifies the p_value (e.g., pv_sig = 0.05) greater than which the calculated kandal tau is not significant and therefore, NA is assigned to the corresponding pixel. If NULL (default), the tau values for all pixels are returned even for non-significant trends}
+  
 
   \item{...}{Additional arguments passed to internal functions.}
 }
@@ -37,14 +40,16 @@ This function generate early warning signals of critical transition using a nove
   The \code{stew} function returns the calculated spatial statistics and LISA analysis results based on the specified output types.
 }
 \examples{
+\dontrun{
 # Load the stew package
 library(stew)
+library(raster)
 
 # Create a sample raster stack
 r1 <- raster(matrix(runif(100), 10, 10))
 r2 <- raster(matrix(runif(100), 10, 10))
 s <- stack(r1, r2)
-rts_obj <- rts(x = s, time = as.Date(c("2023-01-01", "2023-01-01")))
+rts_obj <- rts(x = s, time = as.Date(c("2023-01-01", "2023-02-01")))
 
 # Calculate results using the stew function
 
@@ -54,4 +59,6 @@ plot(result_raster)
 
 result_rts <- stew(rts_obj, stat = "stg", output= "rts")
 plot(result_rts)
+}
+
 }
