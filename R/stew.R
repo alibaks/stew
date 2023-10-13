@@ -1,12 +1,8 @@
-
-# measure local indicators of spatial association (LISA) using the package elsa
-# measure local indicators of spatial association (LISA) using the package elsa
-
 .getLisa <- function(x,d1,d2,stat) {
   lisa(x,d1,d2,statistic = stat)
 }
 #---
-.rasKendal <- function(x,pv_sig=0.05,...) {
+.rasKendal <- function(x,pv_sig=1,...) {
   # based on the mk.test function in the package trend
   if (all(is.na(x))) return(NA)
   
@@ -38,11 +34,12 @@
   pval <- 2 * min(0.5, pnorm(abs(z), lower.tail=FALSE)) # two.sided
   
   if (!is.null(pv_sig) && !is.na(pval)) {
-    if (pval > pv_sig) tau <- NA
+    if (pval > as.numeric(pv_sig)) {
+      tau <- NA
+    }
   }
   
   tau
-  
 }
 #--------
 if (!isGeneric("stew")) {
@@ -171,3 +168,4 @@ setMethod('stew', signature(x='SpatRasterTS'),
             
           }
 )
+
