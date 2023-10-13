@@ -29,9 +29,11 @@
   A list containing the Kendall's rank correlation coefficient, p-value, test statistic, and estimates.
 }
 \author{
- Sara Alibakhshi \\
- Department of Geosciences and Geography, University of Helsinki, Finland  \\
-  sara.alibakhshi@gmail.com
+Sara Alibakhshi
+ 
+Department of Geosciences and Geography, University of Helsinki, Finland
+ 
+sara.alibakhshi@gmail.com
 }
 
 \references{

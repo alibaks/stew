@@ -21,9 +21,11 @@
   If the length of the resulting vector after removing missing values is greater than 20, the function returns the estimated trend value as a numeric value. Otherwise, it returns \code{NA}.
 }
 \author{
- Sara Alibakhshi \\
- Department of Geosciences and Geography, University of Helsinki, Finland  \\
-  sara.alibakhshi@gmail.com
+Sara Alibakhshi
+ 
+Department of Geosciences and Geography, University of Helsinki, Finland
+ 
+sara.alibakhshi@gmail.com
 }
 
 \references{

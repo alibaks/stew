@@ -37,9 +37,11 @@ sptime_ews(x, detrend=NULL,bw=5, interpolate=NULL,k=6,rw=50)
   The \code{stew} function returns the calculated spatial statistics and LISA analysis results based on the specified output types.
 }
 \author{
- Sara Alibakhshi \\
- Department of Geosciences and Geography, University of Helsinki, Finland  \\
-  sara.alibakhshi@gmail.com
+Sara Alibakhshi
+ 
+Department of Geosciences and Geography, University of Helsinki, Finland
+ 
+sara.alibakhshi@gmail.com
 }
 
 \references{

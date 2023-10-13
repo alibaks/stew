@@ -21,9 +21,11 @@
   A numeric vector of length \code{length(x) - k + 1}, containing the rolling mean values.
 }
 \author{
- Sara Alibakhshi \\
- Department of Geosciences and Geography, University of Helsinki, Finland  \\
-  sara.alibakhshi@gmail.com
+Sara Alibakhshi
+ 
+Department of Geosciences and Geography, University of Helsinki, Finland
+ 
+sara.alibakhshi@gmail.com
 }
 
 \references{

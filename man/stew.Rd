@@ -44,9 +44,11 @@ This function generate early warning signals of critical transition using a nove
   The \code{stew} function returns the calculated spatial statistics and LISA analysis results based on the specified output types.
 }
 \author{
- Sara Alibakhshi 
- Department of Geosciences and Geography, University of Helsinki, Finland  
-  sara.alibakhshi@gmail.com
+Sara Alibakhshi
+ 
+Department of Geosciences and Geography, University of Helsinki, Finland
+ 
+sara.alibakhshi@gmail.com
 }
 
 \references{
