@@ -7,6 +7,10 @@
 \description{
 This function generate early warning signals of critical transition using a novel local spatial autocorrelation approach.
 }
+
+\usage{
+  stew(x, stat, d, output, pv_sig, ...)
+}
 \usage{
   stew(x, stat, d, output, pv_sig, ...)
 }
@@ -40,13 +44,13 @@ This function generate early warning signals of critical transition using a nove
   The \code{stew} function returns the calculated spatial statistics and LISA analysis results based on the specified output types.
 }
 \author{
- Sara Alibakhshi \\
- Department of Geosciences and Geography, University of Helsinki, Finland  \\
+ Sara Alibakhshi 
+ Department of Geosciences and Geography, University of Helsinki, Finland  
   sara.alibakhshi@gmail.com
 }
 
 \references{
-1) Alibakhshi, S. (2023). A robust approach and analytical tool for identifying early warning signals of forest mortality, Ecological Indicators. 155.\\
+1) Alibakhshi, S. (2023). A robust approach and analytical tool for identifying early warning signals of forest mortality, Ecological Indicators. 155. \\[10pt]
 2) Alibakhshi, S., T. A. Groen, M. Rautiainen and B. Naimi (2017). "Remotely-sensed early warning signals of a critical transition in a wetland ecosystem." Remote Sensing 9(4): 352-352.
 
 }
