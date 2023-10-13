@@ -50,10 +50,10 @@ This function generate early warning signals of critical transition using a nove
 }
 
 \references{
-1) Alibakhshi, S. (2023). A robust approach and analytical tool for identifying early warning signals of forest mortality, Ecological Indicators. 155. 
+Alibakhshi, S. (2023). A robust approach and analytical tool for identifying early warning signals of forest mortality, Ecological Indicators. 155. \newline
 
 
-2) Alibakhshi, S., T. A. Groen, M. Rautiainen and B. Naimi (2017). "Remotely-sensed early warning signals of a critical transition in a wetland ecosystem." Remote Sensing 9(4): 352-352.
+Alibakhshi, S., T. A. Groen, M. Rautiainen and B. Naimi (2017). "Remotely-sensed early warning signals of a critical transition in a wetland ecosystem." Remote Sensing 9(4): 352-352.
 
 }
 \examples{
@@ -69,8 +69,6 @@ s <- stack(r1, r2)
 rts_obj <- rts(x = s, time = as.Date(c("2023-01-01", "2023-02-01")))
 
 # Calculate results using the stew function
-
-
 result_raster <- stew(rts_obj, stat = "stg", output= "raster")
 plot(result_raster)
 
