@@ -2,7 +2,7 @@
   lisa(x,d1,d2,statistic = stat)
 }
 #---
-.rasKendal <- function(x,pv_sig=1,...) {
+.rasKendal <- function(x,pv_sig=NULL,...) {
   # based on the mk.test function in the package trend
   if (all(is.na(x))) return(NA)
   
@@ -46,7 +46,6 @@ if (!isGeneric("stew")) {
   setGeneric("stew", function(x,stat,d,output,pv_sig,...)
     standardGeneric("stew"))
 }
-
 
 
 
