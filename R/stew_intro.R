@@ -21,4 +21,4 @@ Alibakhshi, S., T. A. Groen, M. Rautiainen and B. Naimi (2017). Remotely-sensed 
 .onAttach <- function(libname, pkgname) {
   .stew_intro()
   invisible()"
-)}
+  )}
