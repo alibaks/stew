@@ -1,7 +1,7 @@
 Package: stew
 Type: Package
 Title: Spatio-temporal Early Warning Signals of Critical Transitions
-Version: 1.1-6
+Version: 1.1-7
 Author: Sara Alibakhshi
 Maintainer: Sara Alibakhshi <sara.alibakhshi@gmail.com>
 Depends: methods, R (>= 3.5.0), rts
