@@ -3,38 +3,58 @@
 \alias{sptime_ews,RasterStackBrickTS-method}
 \alias{sptime_ews,SpatRasterTS-method}
 
-\title{Spatio-temporal early warning signals of a critical transition}
+\title{Spatio-temporal Early Warning Signals of a Critical Transition}
+
 \description{
-This function generate early warning signals of critical transition using a novel local spatial autocorrelation approach.
+  The \code{sptime_ews} function provides tools for analyzing spatio-temporal patterns in raster time series data to detect early warning signals of critical transitions.
 }
 
 \usage{
-sptime_ews(x, detrend=NULL,bw=5, interpolate=NULL,k=6,rw=50)
+  \method{sptime_ews}{RasterStackBrickTS}(x, detrend = NULL, bw = 5, interpolate = NULL, k = 6, rw = 50)
+  \method{sptime_ews}{SpatRasterTS}(x, detrend = NULL, bw = 5, interpolate = NULL, k = 6, rw = 50)
 }
 
 \arguments{
-  \item{x}{Raster Time Series object (created using the rts package)}
-  \item{detrend}{whether detrending is applied, either NULL (for not detrending), or name of detrending method including: 'fdif','gaussian' }
-  \item{bw}{a single numeric value specifies band width}
-  \item{interpolate}{NULL (for no intepolation) or a single character specifying the interpolation method, either of "approx", or "ma" (moving average)}
-  \item{k}{parameter}
-  \item{rw}{rolling window size (default: 50)}
-  }
-  
+  \item{x}{A raster time series object of class \code{RasterStackBrickTS} or \code{SpatRasterTS}.}
+
+  \item{detrend}{Optional. Method for detrending the data. Options include \code{"gaussian"}, \code{"fdif"}, or \code{NULL} for no detrending.}
+
+  \item{bw}{Bandwidth for detrending. Default is 5.}
+
+  \item{interpolate}{Optional. Interpolation method for handling missing values. Options include \code{"approx"}, \code{"ma"}, or \code{NULL} for no interpolation.}
+
+  \item{k}{Parameter for interpolation methods. Default is 6.}
+
+  \item{rw}{Size of the rolling window for analysis. Default is 50.}
+}
+
 \details{
-  The \code{stew} function calculates spatial statistics and performs LISA analysis on each layer of the input raster stack or brick object. It internally uses the \code{.getLisa} function to compute the LISA results.
+  The function employs various detrending and interpolation methods to calculate autocorrelation and detect early warning signals of critical transitions in spatio-temporal raster time series data.
 
-  The function supports different types of statistics and provides options for output types. If 'stat' is set to 'stg', 'geary', 'localgeary', or 'c', the function calculates the Getis-Ord G statistic. If 'stat' is set to 'stm', 'moran', 'localmoran', 'm', or 'i', the function calculates the Moran's I statistic. 
 
-  The output types include:
+The output types include:
   \describe{
     \item{'raster'}{Returns a modified raster object with LISA analysis results for each layer.}
     \item{'rts'}{Returns a raster time series object.}
     \item{'tau'}{Calculates the Kendall's Tau spatial autocorrelation measure.}
   }
 }
-\value{
-  The \code{stew} function returns the calculated spatial statistics and LISA analysis results based on the specified output types.
+
+\author{
+Sara Alibakhshi
+ 
+Department of Geosciences and Geography, University of Helsinki, Finland
+ 
+sara.alibakhshi@gmail.com
+}
+
+\references{
+Alibakhshi, S. (2023). A robust approach and analytical tool for identifying early warning signals of forest mortality, Ecological Indicators. 155.
+
+
+Alibakhshi, S., Groen, T. A.,Rautiainen, M, and Naimi, B (2017). "Remotely-sensed early warning signals of a critical transition in a wetland ecosystem." Remote Sensing 9(4): 352-352.
+
+
 }
 \examples{
 \dontrun{

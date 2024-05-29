@@ -27,6 +27,22 @@
   A list containing the Kendall's rank correlation coefficient and the ACF values.
 }
 
+\author{
+Sara Alibakhshi
+ 
+Department of Geosciences and Geography, University of Helsinki, Finland
+ 
+sara.alibakhshi@gmail.com
+}
+
+\references{
+Alibakhshi, S. (2023). A robust approach and analytical tool for identifying early warning signals of forest mortality, Ecological Indicators. 155.
+
+
+Alibakhshi, S., Groen, T. A.,Rautiainen, M, and Naimi, B (2017). "Remotely-sensed early warning signals of a critical transition in a wetland ecosystem." Remote Sensing 9(4): 352-352.
+
+}
+
 \examples{
 x <- c(1, 2, 3, 4, 5)
 acfk(x, r = 2) # returns: tau=1, acfk=c(NA, NA, 1)

@@ -1,15 +1,15 @@
-\name{getKendal}
-\alias{getKendal}
-\alias{getKendal,numeric-method}
-\title{Calculate Kendall's Rank Correlation}
+\name{stewApp}
+\alias{stewApp}
+\alias{stewApp,Any-method}
+\title{Stew Shiny Application}
 \description{
-  This function calculates Kendall's rank correlation coefficient and its associated p-value for a numeric vector.
+  A shiny-based GUI 
 }
 \usage{
-  getKendal(x)
+  stewApp(x)
 }
 \arguments{
-  \item{x}{A numeric vector.}
+  \item{x}{not implemented}
 }
 \details{
   The function calculates Kendall's rank correlation coefficient and its associated p-value for the input numeric vector \code{x}. Kendall's rank correlation measures the strength and direction of the relationship between two variables based on the ranks of their values.
