@@ -135,24 +135,27 @@ setMethod('stew', signature(x='SpatRasterTS'),
             
             
             
-            o <- rast(xx[[1]])
-            .xxRaster <- as(xx,"Raster") # when elsa is updated, this line can be deleted
+           # o <- rast(xx[[1]])
+            o <- brick(xx[[1]])
+            #.xxRaster <- as(xx,"Raster") # when elsa is updated, this line can be deleted
             
             if (stat %in% c('stg','geary','localgeary','c')) {
-              for (i in 1:nlyr(xx)) {
+              for (i in 1:nlayers(xx)) {
                 #o <- c(o, .getLisa(xx[[i]],d1=0,d2=d,stat='c'))
-                o <- c(o, .getLisa(.xxRaster[[i]],d1=0,d2=d,stat='c')) # when elsa is updated, this line can be deleted
-                
+                #o <- c(o, .getLisa(.xxRaster[[i]],d1=0,d2=d,stat='c')) # when elsa is updated, this line can be deleted
+                o <- c(o, xx(.xxRaster[[i]],d1=0,d2=d,stat='c')) 
               }
             } else if (stat %in% c('stm','moran','localmoran','m','i')) {
-              for (i in 1:nlyr(xx)) {
+              for (i in 1:nlayers(xx)) {
                 #o <- c(o, .getLisa(xx[[i]],d1=0,d2=d,stat='i'))
-                o <- c(o, .getLisa(.xxRaster[[i]],d1=0,d2=d,stat='i')) # when elsa is updated, this line can be deleted
+                #o <- c(o, .getLisa(.xxRaster[[i]],d1=0,d2=d,stat='i')) # when elsa is updated, this line can be deleted
+                o <- c(o, .getLisa(xx[[i]],d1=0,d2=d,stat='i')) 
               }
             }
             #-------
             if ('tau' %in% output) {
-              k <- app(rast(o),.rasKendal,pv_sig=pv_sig)
+              #k <- app(rast(o),.rasKendal,pv_sig=pv_sig)
+              k <- calc(brick(o),.rasKendal,pv_sig=pv_sig)
             }
             #--------
             if (c('rts') %in% output) {

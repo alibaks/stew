@@ -63,10 +63,10 @@ library(stew)
 file <- system.file("external/ndvi.tif", package="stew")
 
 # Read raster object
-r <- rast(file)
+r <- brick(file)
 
 # In order to create a raster time series object, you need the corresponding dates
-d <- seq(as.Date("2000-01-03"), as.Date("2019-01-01"), length.out = nlyr(r))
+d <- seq(as.Date("2000-01-03"), as.Date("2019-01-01"), length.out = nlayers(r))
 
 # Create raster time series object
 rt <- rts(r, d)
@@ -74,8 +74,10 @@ rt <- rts(r, d)
 # Calculate spatio-temporal early warning signals
 spe <- stew(rt, stat = "moran", output = c("rts", "tau"), pv_sig = 0.05)
 
-# Plot the results (uncomment the line below to plot)
-# plot(spe$tau)
+# the results are significant at pvalue=0.05. The results close to 1 or -1
+#may be served as early warnings
+plot(spe$tau)
+plot(spe$rts[[1:3]])#you may want to plot the first three rasters of your time series of data
 }
 }
 }

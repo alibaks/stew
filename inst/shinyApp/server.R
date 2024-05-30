@@ -5,14 +5,14 @@ server <- function(input, output, session) {
   
   ndviData <- reactive({
     req(input$ndviFile)
-    rast(input$ndviFile$datapath)
+    brick(input$ndviFile$datapath)
   })
   
   nt <- reactive({
     if (!is.null(ndviData())) {
       start_date <- input$dateRange[1]
       end_date <- input$dateRange[2]
-      d <- seq(start_date, end_date, length.out = nlyr(ndviData()))
+      d <- seq(start_date, end_date, length.out = nlayers(ndviData()))
       rts(ndviData(), d)
     }
   })

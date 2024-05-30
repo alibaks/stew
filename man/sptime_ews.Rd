@@ -84,7 +84,7 @@ rt
 
 spe <- sptime_ews(rt, detrend=NULL,bw=5, interpolate=NULL,k=6,rw=50)
 
-#plot(spe[[1:4]])
+plot(spe)
 
 }
 
