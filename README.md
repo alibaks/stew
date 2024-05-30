@@ -1,6 +1,13 @@
 # stew
 stew: Spatio-Temporal Analysis of Ecosystem State Changes
 
+You can install the stew library using the following command:
+
+Remember to use the following text: 
+
+```R
+devtools::install_github("alibaks/stew")
+```
 ## Overview
 Ecosystems worldwide are facing unprecedented pressures, with rapid changes in disturbance regimes that can have detrimental effects. However, characterizing the state of an ecosystem and predicting its response to disturbances has proven to be a notoriously challenging task. This study aims to address this issue by leveraging remotely sensed spatio-temporal data to identify early warning signals of forest mortality using satellite images.
 
