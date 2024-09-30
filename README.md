@@ -1,5 +1,5 @@
 # stew
-stew: Spatio-Temporal Analysis of Ecosystem State Changes
+stew: Spatio-Temporal Analysis of Early Warning Signals
 
 You can install the stew library using the following command:
 
